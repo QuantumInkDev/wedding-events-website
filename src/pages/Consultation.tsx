@@ -93,6 +93,7 @@ Fill out the form below and we'll schedule your complimentary consultation withi
       title="Request a Consultation" 
       subtitle="Let's discuss your dream event - complimentary consultation included"
       markdownContent={consultationContent}
+      pageName="consultation"
     >
       <div className="consultation-form-section">
         <div className="form-container">

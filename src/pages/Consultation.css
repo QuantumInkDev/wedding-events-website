@@ -106,6 +106,74 @@
   font-family: inherit;
 }
 
+/* Date picker styling to match site theme */
+.form-group input[type="date"] {
+  position: relative;
+  color: var(--color-soft-black);
+  background: var(--color-white);
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23667eea" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>') no-repeat;
+  background-size: 16px 16px;
+  background-position: center;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23d4af37" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>') no-repeat;
+  background-size: 16px 16px;
+  background-position: center;
+}
+
+/* Webkit date picker styling */
+.form-group input[type="date"]::-webkit-datetime-edit {
+  color: var(--color-soft-black);
+}
+
+.form-group input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  background: transparent;
+}
+
+.form-group input[type="date"]::-webkit-datetime-edit-text {
+  color: var(--color-warm-gray);
+  padding: 0 0.2em;
+}
+
+.form-group input[type="date"]::-webkit-datetime-edit-month-field,
+.form-group input[type="date"]::-webkit-datetime-edit-day-field,
+.form-group input[type="date"]::-webkit-datetime-edit-year-field {
+  background: transparent;
+  color: var(--color-soft-black);
+  border: none;
+  outline: none;
+}
+
+.form-group input[type="date"]:focus::-webkit-datetime-edit-month-field,
+.form-group input[type="date"]:focus::-webkit-datetime-edit-day-field,
+.form-group input[type="date"]:focus::-webkit-datetime-edit-year-field {
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 4px;
+  color: var(--color-primary);
+}
+
+/* Firefox date picker */
+.form-group input[type="date"]::-moz-focus-inner {
+  border: 0;
+}
+
+/* Custom placeholder styling for empty date */
+.form-group input[type="date"]:invalid {
+  color: var(--color-warm-gray);
+}
+
+.form-group input[type="date"]:valid {
+  color: var(--color-soft-black);
+}
+
 .submit-button {
   background: var(--gradient-gold);
   color: var(--color-deep-black);
