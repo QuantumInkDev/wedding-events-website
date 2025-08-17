@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Page } from '../components/Page';
+import emailjs from '@emailjs/browser';
 import './Consultation.css';
 
 interface FormData {
@@ -40,10 +41,38 @@ export const Consultation = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission - replace with actual implementation
+    // EmailJS configuration from environment variables
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      event_type: formData.eventType,
+      event_date: formData.eventDate || 'Not specified',
+      guest_count: formData.guestCount || 'Not specified',
+      budget: formData.budget || 'Not specified',
+      message: formData.message || 'No additional message',
+      to_email: 'weddingsnthings22@gmail.com', // Your Gmail address
+      subject: `New Consultation Request from ${formData.name}`,
+    };
+    
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+      
+      console.log('Email sent successfully:', response);
       setSubmitStatus('success');
+      
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -55,6 +84,7 @@ export const Consultation = () => {
         message: ''
       });
     } catch (error) {
+      console.error('Email sending failed:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
