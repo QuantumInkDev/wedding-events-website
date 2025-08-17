@@ -1,0 +1,339 @@
+.consultation-form-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.form-container {
+  background: var(--color-white);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(192, 192, 192, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-primary);
+}
+
+.form-container h3 {
+  font-family: var(--font-heading);
+  margin: 0 0 2rem 0;
+  color: var(--color-soft-black);
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+}
+
+.form-container h3::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-gold);
+  border-radius: 3px;
+}
+
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--color-soft-black);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-family: var(--font-body);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-light-gray);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  background: var(--color-white);
+  font-family: var(--font-body);
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.submit-button {
+  background: var(--gradient-gold);
+  color: var(--color-deep-black);
+  border: none;
+  padding: 1.25rem 3rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-strong);
+}
+
+.submit-button:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success-message,
+.error-message {
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  background: #d1fae5;
+  border: 1px solid #86efac;
+  color: #065f46;
+}
+
+.error-message {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.success-message h4,
+.error-message h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.success-message p,
+.error-message p {
+  margin: 0;
+}
+
+.error-message a {
+  color: #dc2626;
+  text-decoration: underline;
+}
+
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeInRight 0.8s ease-out 0.8s both;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contact-card,
+.testimonial-card {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(192, 192, 192, 0.2);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before,
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-secondary);
+}
+
+.contact-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.contact-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.contact-card p {
+  margin: 0 0 0.75rem 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.phone-link,
+.email-link {
+  display: inline-block;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.phone-link:hover,
+.email-link:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.availability,
+.response-time {
+  font-size: 0.8rem !important;
+  color: #9ca3af !important;
+  margin: 0 !important;
+}
+
+.testimonial-card {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+}
+
+.testimonial-card::before {
+  background: var(--gradient-gold) !important;
+}
+
+.testimonial-card blockquote {
+  margin: 0 0 1rem 0;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card cite {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .consultation-form-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-sidebar {
+    order: -1;
+  }
+
+  .contact-card,
+  .testimonial-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .consultation-form-section {
+    padding: 0 0.5rem;
+  }
+}
