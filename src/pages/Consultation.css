@@ -106,72 +106,120 @@
   font-family: inherit;
 }
 
-/* Date picker styling to match site theme */
+/* Date picker styling to match site theme - Complete override */
 .form-group input[type="date"] {
   position: relative;
-  color: var(--color-soft-black);
-  background: var(--color-white);
+  color: var(--color-soft-black) !important;
+  background: var(--color-white) !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color-scheme: light;
 }
 
+/* Force color scheme override */
+.form-group input[type="date"] {
+  color-scheme: light !important;
+}
+
+/* Calendar picker icon - complete override */
 .form-group input[type="date"]::-webkit-calendar-picker-indicator {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23667eea" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>') no-repeat;
-  background-size: 16px 16px;
-  background-position: center;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="%23667eea" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>') no-repeat !important;
+  background-size: 20px 20px !important;
+  background-position: center !important;
+  cursor: pointer !important;
+  opacity: 0.8 !important;
+  transition: opacity 0.3s ease !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-left: auto !important;
 }
 
 .form-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
-  opacity: 1;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23d4af37" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>') no-repeat;
-  background-size: 16px 16px;
-  background-position: center;
+  opacity: 1 !important;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="%23d4af37" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>') no-repeat !important;
+  background-size: 20px 20px !important;
+  background-position: center !important;
 }
 
-/* Webkit date picker styling */
+/* Webkit date picker components - complete override */
 .form-group input[type="date"]::-webkit-datetime-edit {
-  color: var(--color-soft-black);
+  color: var(--color-soft-black) !important;
+  background: transparent !important;
 }
 
 .form-group input[type="date"]::-webkit-datetime-edit-fields-wrapper {
-  background: transparent;
+  background: transparent !important;
 }
 
 .form-group input[type="date"]::-webkit-datetime-edit-text {
-  color: var(--color-warm-gray);
-  padding: 0 0.2em;
+  color: var(--color-warm-gray) !important;
+  padding: 0 0.2em !important;
+  background: transparent !important;
 }
 
 .form-group input[type="date"]::-webkit-datetime-edit-month-field,
 .form-group input[type="date"]::-webkit-datetime-edit-day-field,
 .form-group input[type="date"]::-webkit-datetime-edit-year-field {
-  background: transparent;
-  color: var(--color-soft-black);
-  border: none;
-  outline: none;
+  background: transparent !important;
+  color: var(--color-soft-black) !important;
+  border: none !important;
+  outline: none !important;
 }
 
 .form-group input[type="date"]:focus::-webkit-datetime-edit-month-field,
 .form-group input[type="date"]:focus::-webkit-datetime-edit-day-field,
 .form-group input[type="date"]:focus::-webkit-datetime-edit-year-field {
-  background: rgba(212, 175, 55, 0.1);
-  border-radius: 4px;
-  color: var(--color-primary);
+  background: rgba(212, 175, 55, 0.1) !important;
+  border-radius: 4px !important;
+  color: var(--color-primary) !important;
 }
 
 /* Firefox date picker */
 .form-group input[type="date"]::-moz-focus-inner {
-  border: 0;
+  border: 0 !important;
+}
+
+/* Edge/IE date picker */
+.form-group input[type="date"]::-ms-clear,
+.form-group input[type="date"]::-ms-reveal {
+  display: none !important;
 }
 
 /* Custom placeholder styling for empty date */
 .form-group input[type="date"]:invalid {
-  color: var(--color-warm-gray);
+  color: var(--color-warm-gray) !important;
 }
 
 .form-group input[type="date"]:valid {
-  color: var(--color-soft-black);
+  color: var(--color-soft-black) !important;
+}
+
+/* Force light theme on date picker popup (Chrome) */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  color-scheme: light !important;
+}
+
+/* Additional fallback styling */
+.form-group input[type="date"]:focus {
+  color-scheme: light !important;
+}
+
+/* Override any dark theme from OS/browser */
+@media (prefers-color-scheme: dark) {
+  .form-group input[type="date"] {
+    color-scheme: light !important;
+    background: var(--color-white) !important;
+    color: var(--color-soft-black) !important;
+  }
+  
+  .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    color-scheme: light !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
 }
 
 .submit-button {
